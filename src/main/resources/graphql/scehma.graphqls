@@ -1,0 +1,25 @@
+type Employee{
+    empId: ID
+    name: String
+    age: Float
+    city: String
+}
+
+type Query{
+    getAllEmployees: [Employee]
+    getEmployeeById(id: ID): Employee
+}
+
+# Input type for new employee data
+input EmployeeInput {
+    empId: ID
+    name: String
+    age: Float
+    city: String
+}
+
+type Mutation{
+    addEmployee(employee: EmployeeInput): Employee
+    updateEmployee(employee: EmployeeInput): Employee
+    deleteEmployeeById(id: ID): String
+}
